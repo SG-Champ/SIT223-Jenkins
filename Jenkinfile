@@ -121,9 +121,12 @@ pipeline{
                 success{
                     mail to: "foo@bertagna.info",
                     subject: "Intergration Tests on Staging Status Email",
-                    body: "Intergration Tests on Staging were Successful"
+                    body: "Intergration Tests on Staging were Successful",
+                    attachmentsPattern: 'Jenkin_log_email_example'
+
+                    
                 }
-                echo "This is the log file" > Jenkin_log_email_example.txt
+                
             }
         }
 
