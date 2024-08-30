@@ -43,11 +43,11 @@ pipeline{
 
             post{
                 success{
-                    emailext(
+                   emailext(
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
                         body: "Intergration Tests on Staging were Successful",
-                        attachLog: true
+                        attachLog: true, compressLog: true
                     )
                 }
             }
@@ -86,7 +86,7 @@ pipeline{
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
                         body: "Intergration Tests on Staging were Successful",
-                        attachLog: true
+                        attachLog: true, compressLog: true
                     )
                 }
             }
@@ -124,11 +124,11 @@ pipeline{
 
             post{
                 always{
-                    emailext(
+                  emailext(
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
                         body: "Intergration Tests on Staging were Successful",
-                        attachLog: true
+                        attachLog: true, compressLog: true
                     )
                     
                 }
