@@ -43,9 +43,12 @@ pipeline{
 
             post{
                 success{
-                    mail to: "foo@bertagna.info",
-                    subject: "Unit and Intergration Status Email",
-                    body: "Unit and Intergration Tests were Successful"
+                    emailext(
+                        to: "foo@bertagna.info",
+                        subject: "Intergration Tests on Staging Status Email",
+                        body: "Intergration Tests on Staging were Successful",
+                        attachLog: true
+                    )
                 }
             }
         }
@@ -79,9 +82,12 @@ pipeline{
 
             post{
                 success{
-                    mail to: "foo@bertagna.info",
-                    subject: "Security Scan Status Email",
-                    body: "Security Scan was Successful"
+                    emailext(
+                        to: "foo@bertagna.info",
+                        subject: "Intergration Tests on Staging Status Email",
+                        body: "Intergration Tests on Staging were Successful",
+                        attachLog: true
+                    )
                 }
             }
 
@@ -115,7 +121,7 @@ pipeline{
                 echo "Intergration Tests on Staging has completed"
 
             }
-            
+
             post{
                 always{
                     emailext(
