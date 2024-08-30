@@ -39,7 +39,7 @@ pipeline{
             }
 
             post{
-                success{
+                always{
                    emailext(
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
@@ -76,7 +76,7 @@ pipeline{
             }
 
             post{
-                success{
+                always{
                     emailext(
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
