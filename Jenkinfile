@@ -123,6 +123,7 @@ pipeline{
                     subject: "Intergration Tests on Staging Status Email",
                     body: "Intergration Tests on Staging were Successful"
                 }
+                echo "This is the log file" > Jenkin_log_email_example.txt
             }
         }
 
