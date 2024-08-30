@@ -9,7 +9,6 @@ pipeline{
                 echo "Bamboo has been launched"
                 echo "Compiling and packaging your code"
                 
-                sleep 3
 
                 echo "Compiling and packaging is complete"
                 echo "Bamboo is shutting down"
@@ -24,7 +23,6 @@ pipeline{
                 echo "Testim has been launched"
                 echo "Testing code functionality"
 
-                sleep 3
 
                 echo "Code functionailty test complete"
                 echo "Testim is shutting down"
@@ -34,7 +32,6 @@ pipeline{
                 echo "Katalon Studio has been launched"
                 echo "Testing application components"
                 
-                sleep 3
 
                 echo "Application component testing complete"
                 echo "Katalon Studio is sutting down"
@@ -59,7 +56,6 @@ pipeline{
                 echo "Sonarqube has been launched"
                 echo "Analysing code to meet industry standards"
                 
-                sleep 3
 
                 echo "Analysis of code is complete"
                 echo "Sonarqube is shutting down"
@@ -73,7 +69,6 @@ pipeline{
                 echo "Nmap has been launched"
                 echo "Performing a security scan"
                 
-                sleep 3
 
                 echo "No vulnerabilities in code have been found"
                 echo "Nmap is shutting down"
@@ -99,7 +94,6 @@ pipeline{
                 echo "The AWS EC2 instance has launched"
                 echo "Deploying the application to the staging server"
 
-                sleep 3
 
                 echo "Application has been deployed to the staging server"
                 echo "Deploy to Staging has completed"
@@ -111,11 +105,10 @@ pipeline{
                 echo "Integration Tests on Staging had started"
                 echo "Running intergration test on staging environment..."
                 
-                sleep 3
+                
 
                 echo "Ensuring the application is functioning in a production-like environment"
                 
-                sleep 3
 
                 echo "Intergration tests were successful"
                 echo "Intergration Tests on Staging has completed"
@@ -144,8 +137,6 @@ pipeline{
                 echo "Deploy to Production has started"
                 echo "The AWS EC2 instance was launched"
                 echo "Deploying the application to production server"
-
-                sleep 3
 
                 echo "Deployment to production server was successful"
                 echo "Deploy to Production has completed"
