@@ -117,14 +117,19 @@ pipeline{
                 echo "Intergration Tests on Staging has completed"
 
             }
-             post{
-                success{
-                    mail to: "foo@bertagna.info",
-                    subject: "Intergration Tests on Staging Status Email",
-                    body: "Intergration Tests on Staging were Successful"
-
+            post{
+                always{
+                    emailext(
+                        mail to: "foo@bertagna.info",
+                        subject: "Intergration Tests on Staging Status Email",
+                        body: "Intergration Tests on Staging were Successful",
+                        attachlog: true
+                        )
                     
                 }
+
+               
+            }
                 
             }
         }
