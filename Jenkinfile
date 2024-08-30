@@ -1,10 +1,6 @@
 pipeline{
     agent any
-    environment{
-        directory_path= "Jenkins 5.1P"
-        testing_environment= "testzone"
-        production_environment= "sam"
-    }
+    
     stages{
         stage('build'){
             steps{
@@ -44,6 +40,7 @@ pipeline{
                 echo "Katalon Studio is sutting down"
                 echo "Unit and Intergration Tests has completed"
             }
+
             post{
                 success{
                     mail to: "foo@bertagna.info",
@@ -79,7 +76,8 @@ pipeline{
                 echo "Nmap is shutting down"
                 echo "Security Scan has completed"
             }
-             post{
+
+            post{
                 success{
                     mail to: "foo@bertagna.info",
                     subject: "Security Scan Status Email",
@@ -117,24 +115,25 @@ pipeline{
                 echo "Intergration Tests on Staging has completed"
 
             }
+            
             post{
                 always{
                     emailext(
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
                         body: "Intergration Tests on Staging were Successful",
-                        attachlog: true
-                        )
+                        attachLog: true
+                    )
                     
                 }
 
                
             }
-                
-            }
+
+
         }
 
-         stage('deploy to production'){
+        stage('deploy to production'){
             steps{
                 echo "Deploy to Production has started"
                 echo "The AWS EC2 instance was launched"
@@ -148,3 +147,4 @@ pipeline{
             }
         }
     }
+}
