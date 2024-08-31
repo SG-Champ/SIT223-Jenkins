@@ -121,7 +121,8 @@ pipeline{
                         to: "foo@bertagna.info",
                         subject: "Intergration Tests on Staging Status Email",
                         body: "Intergration Tests on Staging were Successful",
-                        attachLog: true, compressLog: false
+                        attachLog: true, 
+                        compressLog: false
                     )
                     
                 }
