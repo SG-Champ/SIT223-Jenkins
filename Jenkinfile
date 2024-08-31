@@ -42,8 +42,8 @@ pipeline{
                 always{
                    emailext(
                         to: "foo@bertagna.info",
-                        subject: "Intergration Tests on Staging Status Email",
-                        body: "Intergration Tests on Staging were Successful",
+                        subject: "Unit and Integration Tests Status Email",
+                        body: "Unit and Integration Tests were Successful",
                         attachLog: true
                     )
                 }
@@ -79,8 +79,8 @@ pipeline{
                 always{
                     emailext(
                         to: "foo@bertagna.info",
-                        subject: "Intergration Tests on Staging Status Email",
-                        body: "Intergration Tests on Staging were Successful",
+                        subject: "Security Scan Status Email",
+                        body: "Security Scans were Successful",
                         attachLog: true
                     )
                 }
