@@ -1,10 +1,12 @@
 pipeline{
     agent any
     
-    
     stages{
-        stage('deploy to production'){
-             post{
+        stage('build'){
+            steps{
+                echo "Build has started"
+            }
+            post{
                 always{
                   emailext(
                         to: "foo@bertagna.info",
@@ -16,8 +18,7 @@ pipeline{
                 }
 
                
-            }                
-                
             }
+        }
     }
 }
