@@ -5,7 +5,116 @@ pipeline{
         stage('build'){
             steps{
                 echo "Build has started"
+                echo "Launching build automation tool"
+                echo "Bamboo has been launched"
+                echo "Compiling and packaging your code"
+                
+
+                echo "Compiling and packaging is complete"
+                echo "Bamboo is shutting down"
+                echo "Build has completed"
             }
+        }
+
+        stage('unit and integration tests'){
+            steps{
+                echo "Unit and Integration Tests have started"
+                echo "Launching unit test tool"
+                echo "Testim has been launched"
+                echo "Testing code functionality"
+
+
+                echo "Code functionailty test complete"
+                echo "Testim is shutting down"
+
+
+                echo "Launching integration test tool"
+                echo "Katalon Studio has been launched"
+                echo "Testing application components"
+                
+
+                echo "Application component testing complete"
+                echo "Katalon Studio is sutting down"
+                echo "Unit and Intergration Tests has completed"
+            }
+
+            post{
+                always{
+                   emailext(
+                        to: "foo@bertagna.info",
+                        subject: "Intergration Tests on Staging Status Email",
+                        body: "Intergration Tests on Staging were Successful",
+                        attachLog: true, compressLog: true
+                    )
+                }
+            }
+        }
+
+        stage('code analysis'){
+            steps{
+                echo "Code Analysis has started"
+                echo "Sonarqube has been launched"
+                echo "Analysing code to meet industry standards"
+                
+
+                echo "Analysis of code is complete"
+                echo "Sonarqube is shutting down"
+                echo "Code Analysis has completed"
+            }
+        }
+
+        stage('security scan'){
+            steps{
+                echo "Security Scan has started"
+                echo "Nmap has been launched"
+                echo "Performing a security scan"
+                
+
+                echo "No vulnerabilities in code have been found"
+                echo "Nmap is shutting down"
+                echo "Security Scan has completed"
+            }
+
+            post{
+                always{
+                    emailext(
+                        to: "foo@bertagna.info",
+                        subject: "Intergration Tests on Staging Status Email",
+                        body: "Intergration Tests on Staging were Successful",
+                        attachLog: true, compressLog: true
+                    )
+                }
+            }
+
+        }
+
+        stage('deploy to staging'){
+            steps{
+                echo "Deploy to Staging has started"
+                echo "The AWS EC2 instance has launched"
+                echo "Deploying the application to the staging server"
+
+
+                echo "Application has been deployed to the staging server"
+                echo "Deploy to Staging has completed"
+            }
+        }    
+
+        stage('integration tests on staging'){
+            steps{
+                echo "Integration Tests on Staging had started"
+                echo "Running intergration test on staging environment..."
+                
+                
+
+                echo "Ensuring the application is functioning in a production-like environment"
+                
+
+                echo "Intergration tests were successful"
+                echo "Intergration Tests on Staging has completed"
+
+            }
+
             post{
                 always{
                   emailext(
@@ -18,6 +127,20 @@ pipeline{
                 }
 
                
+            }
+
+
+        }
+
+        stage('deploy to production'){
+            steps{
+                echo "Deploy to Production has started"
+                echo "The AWS EC2 instance was launched"
+                echo "Deploying the application to production server"
+
+                echo "Deployment to production server was successful"
+                echo "Deploy to Production has completed"
+                
             }
         }
     }
