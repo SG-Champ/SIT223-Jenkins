@@ -1,4 +1,10 @@
-  post{
+pipeline{
+    agent any
+    
+    
+
+        stage('deploy to production'){
+             post{
                 always{
                   emailext(
                         to: "foo@bertagna.info",
@@ -10,4 +16,7 @@
                 }
 
                
+            }                
+                
             }
+}
