@@ -9,9 +9,9 @@ pipeline{
             post{
                 always{
                   emailext(
-                        to: "foo@bertagna.info"
-                        subject: "Intergration Tests on Staging Status Email"
-                        body: "Intergration Tests on Staging were Successful"
+                        to: "foo@bertagna.info",
+                        subject: "Intergration Tests on Staging Status Email",
+                        body: "Intergration Tests on Staging were Successful",
                         
                     )
                     
