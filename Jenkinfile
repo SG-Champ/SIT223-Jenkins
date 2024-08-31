@@ -2,7 +2,7 @@ pipeline{
     agent any
     
     
-
+    stages{
         stage('deploy to production'){
              post{
                 always{
@@ -19,4 +19,5 @@ pipeline{
             }                
                 
             }
+    }
 }
