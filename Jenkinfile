@@ -16,7 +16,7 @@ pipeline{
             }
         }
 
-        stage('Unit and Integration tests'){
+        stage('Unit and Integration Tests'){
             steps{
                 echo "Unit and Integration Tests have started"
                 echo "Launching unit test tool"
